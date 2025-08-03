@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Calculadora de KPIs de Marketing – Científica</h1>
+    <h1> Calculadora de KPIs de Marketing – Científica</h1>
 
     <div class="input-group">
       <label><input type="checkbox" id="modoSimple" checked /> Modo simple 
@@ -69,95 +69,133 @@
     </div>
 
     <div class="input-group avanzado">
-      <label for="visitasMeta">Visitas meta:</label>
+      <label for="visitasMeta">Visitas meta: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Se calcula si no se fija</span></span>
+      </label>
       <input type="number" id="visitasMeta" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="alcanceMeta">Alcance meta:</label>
+      <label for="alcanceMeta">Alcance meta: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Se calcula si no se fija</span></span>
+      </label>
       <input type="number" id="alcanceMeta" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="tam">TAM / Vol KW:</label>
+      <label for="tam">TAM / Vol KW: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Volumen total de búsquedas</span></span>
+      </label>
       <input type="number" id="tam" value="100" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="visibilidad">% Visibilidad:</label>
+      <label for="visibilidad">% Visibilidad: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">% del TAM que realmente te verá</span></span>
+      </label>
       <input type="number" id="visibilidad" value="35" />
     </div>
 
     <div class="input-group avanzado">
-      <label><input type="checkbox" id="capTAM" checked /> Cap TAM×Vis.</label>
+      <label><input type="checkbox" id="capTAM" checked /> Cap TAM×Vis. 
+        <span class="tooltip">ⓘ<span class="tooltiptext">No permite sobrepasar TAM×%Visibilidad</span></span>
+      </label>
     </div>
 
     <div class="input-group avanzado">
-      <label for="impresiones">Impresiones obs.:</label>
+      <label for="impresiones">Impresiones obs.: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Impresiones históricas</span></span>
+      </label>
       <input type="number" id="impresiones" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="clics">Clics obs.:</label>
+      <label for="clics">Clics obs.: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Clics históricos</span></span>
+      </label>
       <input type="number" id="clics" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="visitas">Visitas obs.:</label>
+      <label for="visitas">Visitas obs.: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Visitas históricas</span></span>
+      </label>
       <input type="number" id="visitas" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="registros">Registros obs.:</label>
+      <label for="registros">Registros obs.: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Registros históricos</span></span>
+      </label>
       <input type="number" id="registros" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label><input type="checkbox" id="monteCarlo" /> Monte Carlo</label>
+      <label><input type="checkbox" id="monteCarlo" /> Monte Carlo 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Simulación aleatoria</span></span>
+      </label>
     </div>
 
     <div class="input-group avanzado">
-      <label for="runs">Runs:</label>
+      <label for="runs">Runs: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">N° de simulaciones</span></span>
+      </label>
       <input type="number" id="runs" value="10000" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="bounce">Bounce %:</label>
+      <label for="bounce">Bounce %: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">% que se va sin interactuar</span></span>
+      </label>
       <input type="number" id="bounce" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="leads">% Leads calif.:</label>
+      <label for="leads">% Leads calif.: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">% de calidad</span></span>
+      </label>
       <input type="number" id="leads" value="100" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="closeRate">Close rate %:</label>
+      <label for="closeRate">Close rate %: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">% de cierre</span></span>
+      </label>
       <input type="number" id="closeRate" value="20" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="costo">Costo total ($):</label>
+      <label for="costo">Costo total ($): 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Gasto de la campaña</span></span>
+      </label>
       <input type="number" id="costo" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="ingresos">Ingresos ($):</label>
+      <label for="ingresos">Ingresos ($): 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Ingresos atribuibles</span></span>
+      </label>
       <input type="number" id="ingresos" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="visitasReales">Visitas reales:</label>
+      <label for="visitasReales">Visitas reales: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Visitas reales acumuladas</span></span>
+      </label>
       <input type="number" id="visitasReales" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="regsReales">Registros reales:</label>
+      <label for="regsReales">Registros reales: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Registros reales acumulados</span></span>
+      </label>
       <input type="number" id="regsReales" value="0" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="reparto">Reparto:</label>
+      <label for="reparto">Reparto: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Cómo distribuyes metas</span></span>
+      </label>
       <select id="reparto">
         <option value="flat">Parejo</option>
         <option value="grow">15/25/30/30</option>
@@ -167,21 +205,27 @@
     </div>
 
     <div class="input-group avanzado">
-      <label for="custom">% custom:</label>
+      <label for="custom">% custom: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Ej: 10,20,30,40</span></span>
+      </label>
       <input type="text" id="custom" value="10,20,30,40" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="logA">log a:</label>
+      <label for="logA">log a: 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Pendiente logística</span></span>
+      </label>
       <input type="number" id="logA" value="1.2" />
     </div>
 
     <div class="input-group avanzado">
-      <label for="logB">log b (0=auto):</label>
+      <label for="logB">log b (0=auto): 
+        <span class="tooltip">ⓘ<span class="tooltiptext">Punto medio</span></span>
+      </label>
       <input type="number" id="logB" value="0" />
     </div>
 
-    <button id="btnCalcular" class="boton-estilo">Calcular</button>
+    <button id="btnCalcular">Calcular </button>
     <div id="resultados"></div>
   </div>
 
