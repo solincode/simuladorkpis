@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de KPIs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Calculadora de KPIs de Marketing – Científica</h1>
+
+    <div class="input-group">
+      <label><input type="checkbox" id="modoSimple" checked /> Modo simple <span class="tooltip">ⓘ<span class="tooltiptext">Muestra solo lo esencial. Úsalo para 'llenar y listo'</span></span></label>
+    </div>
+
+    <div class="input-group">
+      <label for="objetivo">Objetivo: <span class="tooltip">ⓘ<span class="tooltiptext">Qué quieres fijar manualmente</span></span></label>
+      <select id="objetivo">
+        <option value="registros">Registros</option>
+        <option value="visitas">Visitas</option>
+        <option value="alcance">Alcance</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="canal">Canal: <span class="tooltip">ⓘ<span class="tooltiptext">Fuente del tráfico (ej: SEO)</span></span></label>
+      <select id="canal"></select>
+    </div>
+
+    <div class="input-group">
+      <label><input type="checkbox" id="usarBench" checked /> Usar benchmark del canal <span class="tooltip">ⓘ<span class="tooltiptext">Aplica valores típicos según canal</span></span></label>
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="ctr">CTR (%): <span class="tooltip">ⓘ<span class="tooltiptext">% de alcanzados que hacen clic</span></span></label>
+      <input type="number" id="ctr" value="5" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="conv">Conversión (%): <span class="tooltip">ⓘ<span class="tooltiptext">% de visitas que convierten</span></span></label>
+      <input type="number" id="conv" value="3" />
+    </div>
+
+    <div class="input-group">
+      <label for="semanas">Semanas: <span class="tooltip">ⓘ<span class="tooltiptext">Duración en semanas</span></span></label>
+      <input type="number" id="semanas" value="4" />
+    </div>
+
+    <div class="input-group">
+      <label for="regsMeta">Registros meta: <span class="tooltip">ⓘ<span class="tooltiptext">Objetivo principal</span></span></label>
+      <input type="number" id="regsMeta" value="9" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="visitasMeta">Visitas meta: <span class="tooltip">ⓘ<span class="tooltiptext">Se calcula si no se fija</span></span></label>
+      <input type="number" id="visitasMeta" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="alcanceMeta">Alcance meta: <span class="tooltip">ⓘ<span class="tooltiptext">Se calcula si no se fija</span></span></label>
+      <input type="number" id="alcanceMeta" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="tam">TAM / Vol KW: <span class="tooltip">ⓘ<span class="tooltiptext">Volumen total de búsquedas</span></span></label>
+      <input type="number" id="tam" value="100" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="visibilidad">% Visibilidad: <span class="tooltip">ⓘ<span class="tooltiptext">% del TAM que realmente te verá</span></span></label>
+      <input type="number" id="visibilidad" value="35" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label><input type="checkbox" id="capTAM" checked /> Cap TAM×Vis. <span class="tooltip">ⓘ<span class="tooltiptext">No permite sobrepasar TAM×%Visibilidad</span></span></label>
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="impresiones">Impresiones obs.: <span class="tooltip">ⓘ<span class="tooltiptext">Impresiones históricas</span></span></label>
+      <input type="number" id="impresiones" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="clics">Clics obs.: <span class="tooltip">ⓘ<span class="tooltiptext">Clics históricos</span></span></label>
+      <input type="number" id="clics" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="visitas">Visitas obs.: <span class="tooltip">ⓘ<span class="tooltiptext">Visitas históricas</span></span></label>
+      <input type="number" id="visitas" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="registros">Registros obs.: <span class="tooltip">ⓘ<span class="tooltiptext">Registros históricos</span></span></label>
+      <input type="number" id="registros" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label><input type="checkbox" id="monteCarlo" /> Monte Carlo <span class="tooltip">ⓘ<span class="tooltiptext">Simulación aleatoria</span></span></label>
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="runs">Runs: <span class="tooltip">ⓘ<span class="tooltiptext">N° de simulaciones</span></span></label>
+      <input type="number" id="runs" value="10000" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="bounce">Bounce %: <span class="tooltip">ⓘ<span class="tooltiptext">% que se va sin interactuar</span></span></label>
+      <input type="number" id="bounce" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="leads">% Leads calif.: <span class="tooltip">ⓘ<span class="tooltiptext">% de calidad</span></span></label>
+      <input type="number" id="leads" value="100" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="closeRate">Close rate %: <span class="tooltip">ⓘ<span class="tooltiptext">% de cierre</span></span></label>
+      <input type="number" id="closeRate" value="20" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="costo">Costo total ($): <span class="tooltip">ⓘ<span class="tooltiptext">Gasto de la campaña</span></span></label>
+      <input type="number" id="costo" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="ingresos">Ingresos ($): <span class="tooltip">ⓘ<span class="tooltiptext">Ingresos atribuibles</span></span></label>
+      <input type="number" id="ingresos" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="visitasReales">Visitas reales: <span class="tooltip">ⓘ<span class="tooltiptext">Visitas reales acumuladas</span></span></label>
+      <input type="number" id="visitasReales" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="regsReales">Registros reales: <span class="tooltip">ⓘ<span class="tooltiptext">Registros reales acumulados</span></span></label>
+      <input type="number" id="regsReales" value="0" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="reparto">Reparto: <span class="tooltip">ⓘ<span class="tooltiptext">Cómo distribuyes metas</span></span></label>
+      <select id="reparto">
+        <option value="flat">Parejo</option>
+        <option value="grow">15/25/30/30</option>
+        <option value="logistic">Logística</option>
+        <option value="custom">Personalizado</option>
+      </select>
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="custom">% custom: <span class="tooltip">ⓘ<span class="tooltiptext">Ej: 10,20,30,40</span></span></label>
+      <input type="text" id="custom" value="10,20,30,40" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="logA">log a: <span class="tooltip">ⓘ<span class="tooltiptext">Pendiente logística</span></span></label>
+      <input type="number" id="logA" value="1.2" />
+    </div>
+
+    <div class="input-group avanzado">
+      <label for="logB">log b (0=auto): <span class="tooltip">ⓘ<span class="tooltiptext">Punto medio</span></span></label>
+      <input type="number" id="logB" value="0" />
+    </div>
+
+    <button id="btnCalcular">Calcular 📈</button>
+    <div id="resultados"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

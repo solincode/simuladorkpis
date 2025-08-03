@@ -1,0 +1,137 @@
+:root {
+  --accent: #00a6fb;
+  --bg: #d6f1ff;
+  --font: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: #f5faff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 166, 251, 0.1);
+}
+
+h1 {
+  font-size: 26px;
+  color: #0072ff;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  background-color: var(--bg);
+  border-radius: 10px;
+  border: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  font-family: var(--font);
+  padding: 10px 12px;
+  font-size: 14px;
+  width: 100%;
+}
+
+input:hover,
+select:hover {
+  background-color: #ffffff;
+}
+
+button {
+  background-image: linear-gradient(to bottom right, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 0px #0072ff;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  margin-top: 20px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px #0072ff;
+}
+
+button:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  background-image: linear-gradient(to bottom right, #0072ff, #00c6ff);
+}
+
+#resultados {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.error {
+  color: #b00020;
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+/* Para ocultar campos avanzados con modo simple */
+.avanzado {
+  display: block;
+}
+.oculto {
+  display: none !important;
+}
+
+/* Tooltips */
+.tooltip {
+  cursor: help;
+  position: relative;
+  display: inline-block;
+  color: #00a6fb;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  max-width: 260px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
