@@ -6,39 +6,42 @@
 
 body {
   font-family: var(--font);
-  background-color: #f5faff;
+  background-color: #f7fbff;
   margin: 0;
-  padding: 0;
+  padding: 2rem;
+  color: #333;
 }
 
 .container {
   max-width: 900px;
-  margin: 40px auto;
+  margin: auto;
   background: white;
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 166, 251, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   font-size: 26px;
   color: #0072ff;
-  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .input-group {
   margin-bottom: 15px;
 }
 
-label {
+.input-group label {
   font-weight: 600;
   color: #333;
   display: block;
   margin-bottom: 5px;
 }
 
-input,
-select {
+.input-group input,
+.input-group select {
   background-color: var(--bg);
   border-radius: 10px;
   border: none;
@@ -48,43 +51,66 @@ select {
   padding: 10px 12px;
   font-size: 14px;
   width: 100%;
+  margin-top: 0.25rem;
 }
 
-input:hover,
-select:hover {
+.input-group input:hover,
+.input-group select:hover {
   background-color: #ffffff;
 }
 
-button {
-  background-image: linear-gradient(to bottom right, #00c6ff, #0072ff);
-  border: none;
-  border-radius: 40px;
-  color: white;
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: bold;
+/* Estilo sliders (si alguno de tus simuladores los usa) */
+.input-group input[type="range"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  border-radius: 5px;
+  height: 10px;
+  appearance: none;
+}
+
+.input-group input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: linear-gradient(160deg, #4900f5 0%, #80D0C7 100%);
   cursor: pointer;
-  box-shadow: 0px 4px 0px #0072ff;
-  transition: all 0.2s ease-in-out;
-  display: block;
-  margin-top: 20px;
+  appearance: none;
+  margin-top: -5px;
 }
 
-button:hover {
+.boton-estilo {
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.boton-estilo:hover {
+  background: linear-gradient(to bottom right, #0072ff, #00c6ff);
   transform: translateY(-2px);
-  box-shadow: 0px 6px 0px #0072ff;
 }
 
-button:active {
-  transform: translateY(0px);
-  box-shadow: none;
-  background-image: linear-gradient(to bottom right, #0072ff, #00c6ff);
-}
-
+#output,
 #resultados {
-  margin-top: 30px;
-  font-size: 15px;
-  line-height: 1.5;
+  margin-top: 2rem;
+}
+
+/* Estados de resultados */
+.recomendacion {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
 }
 
 .error {
@@ -93,7 +119,7 @@ button:active {
   font-weight: bold;
 }
 
-/* Para ocultar campos avanzados con modo simple */
+/* Avanzado/simple toggle */
 .avanzado {
   display: block;
 }
@@ -106,7 +132,7 @@ button:active {
   cursor: help;
   position: relative;
   display: inline-block;
-  color: #00a6fb;
+  color: var(--accent);
   font-weight: bold;
   margin-left: 5px;
 }
